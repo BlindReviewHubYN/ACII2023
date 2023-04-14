@@ -971,7 +971,7 @@ for(i in c(1:length(questions_to_plot))){
   pd <- position_dodge(0.5)
   g <- ggplot(dat_temp, aes(x = time, y=mean, color =instruction, group = instruction)) +
     geom_errorbar(aes(ymin=mean-1.96*se, ymax=mean+1.96*se), width=.3, position=pd) + 
-    geom_point(position=pd, size=3) + ylim(-0.25, ylim_list[i]) + ggtitle(q) + 
+    geom_point(position=pd, size=3) + ylim(-0.25, ylim_list[i]) + ggtitle(titles[i]) + 
     ylab("Likert") + xlab("Phase") + facet_wrap(~short_name) + theme(legend.position = "none")
   plot_list[[i]] <- g
 }
